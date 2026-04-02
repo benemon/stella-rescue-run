@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Help Stella the rocket pilot rescue stranded astronauts in this fun route optimization game for kids!">
+  <title>Stella's Rescue Run</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Title Screen -->
+  <div id="title-screen" class="screen">
+    <div class="title-panel">
+      <h1 class="game-title">Stella's Rescue Run</h1>
+      <p class="game-subtitle">Help Stella rescue her friends!</p>
+
+      <div id="title-rocket" class="mission-rocket"></div>
+
+      <p class="welcome-text">Welcome aboard, Captain! Take command of Stella's rescue missions and guide her safely through the galaxy.</p>
+
+      <button id="start-game-btn" class="primary-btn">Start Mission →</button>
+      <button id="title-info-btn" class="info-btn">For Parents: About This Game</button>
+    </div>
+  </div>
+
+  <!-- Mission Briefing Screen -->
+  <div id="mission-screen" class="screen hidden">
+    <div class="mission-panel">
+      <div id="mission-level-indicator" class="level-indicator"></div>
+
+      <div id="fuel-warning" class="fuel-warning hidden">
+        <span class="warning-badge">⚠ WARNING</span>
+        <span class="warning-text">Tank is half empty!</span>
+      </div>
+
+      <p id="mission-text" class="mission-text"></p>
+
+      <div id="astronaut-row" class="astronaut-row"></div>
+
+      <button id="start-planning-btn" class="primary-btn">Plan the Route! →</button>
+    </div>
+  </div>
+
+  <!-- Planning/Flight Screen -->
+  <div id="map-screen" class="screen hidden">
+    <div class="map-container">
+      <svg id="star-map" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <!-- Gradients and patterns will be added by map.js -->
+        </defs>
+
+        <!-- Background layers (stars, nebulae) -->
+        <g id="background-layer"></g>
+
+        <!-- Ghost trail from previous route -->
+        <polyline id="ghost-trail" class="ghost-trail" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-dasharray="8,6" />
+
+        <!-- Planned route (dashed yellow) -->
+        <polyline id="planned-route" class="planned-route" fill="none" stroke="#ffd700" stroke-width="3" stroke-dasharray="10,6" />
+
+        <!-- Traveled path (solid yellow) -->
+        <polyline id="traveled-path" class="traveled-path" fill="none" stroke="#ffd700" stroke-width="3" />
+
+        <!-- Home station and planets -->
+        <g id="objects-layer"></g>
+
+        <!-- Map rocket (appears during flight) -->
+        <g id="map-rocket" class="map-rocket hidden"></g>
+
+        <!-- Burst effects -->
+        <g id="effects-layer"></g>
+      </svg>
+    </div>
+
+    <div class="map-panel">
+      <h2 class="panel-title">Mission Control</h2>
+      <div id="map-level-indicator" class="level-indicator level-indicator-small"></div>
+
+      <div class="fuel-section">
+        <div class="fuel-label-row">
+          <span class="fuel-label">Fuel</span>
+          <span id="fuel-status" class="fuel-status">Full tank</span>
+        </div>
+        <div class="fuel-gauge-container">
+          <div class="fuel-danger-zone"></div>
+          <div class="fuel-danger-marker"></div>
+          <div class="fuel-gauge-track">
+            <div id="fuel-gauge-fill" class="fuel-gauge-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls-section">
+        <button id="undo-btn" class="secondary-btn" disabled>↶ Undo</button>
+        <button id="clear-btn" class="secondary-btn" disabled>✕ Clear</button>
+        <button id="launch-btn" class="primary-btn" disabled>Launch Stella! 🚀</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Screen -->
+  <div id="results-screen" class="screen hidden">
+    <div class="results-panel">
+      <h2 id="results-title" class="results-title"></h2>
+
+      <div id="star-rating" class="star-rating"></div>
+
+      <p id="results-message" class="results-message"></p>
+
+      <div class="results-controls">
+        <button id="replay-btn" class="secondary-btn">Fly Again →</button>
+        <button id="next-level-btn" class="primary-btn hidden">Next Level →</button>
+        <button id="start-over-btn" class="primary-btn hidden">Start Over 🚀</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Failure Overlay -->
+  <div id="failure-overlay" class="overlay hidden">
+    <div class="failure-panel">
+      <h2 class="failure-title">Out of Fuel!</h2>
+
+      <p class="failure-message">Stella ran out of fuel before she could rescue everyone. Find a shorter route!</p>
+
+      <div id="crew-status" class="crew-status"></div>
+
+      <button id="try-again-btn" class="primary-btn">Try Again →</button>
+    </div>
+  </div>
+
+  <!-- Info Modal -->
+  <div id="info-modal" class="overlay hidden">
+    <div class="info-panel">
+      <button id="close-info-btn" class="close-btn" aria-label="Close">✕</button>
+      <h2 class="info-title">About This Game</h2>
+
+      <div class="info-content">
+        <section class="info-section">
+          <h3>What Does This Teach?</h3>
+          <p>Stella's Rescue Run introduces children to <strong>route optimisation</strong> - finding the shortest path to visit multiple locations. This is a fundamental problem in computer science and mathematics that helps develop:</p>
+          <ul>
+            <li>Logical thinking and problem-solving skills</li>
+            <li>Spatial reasoning and visual planning</li>
+            <li>Understanding of efficiency and optimisation</li>
+          </ul>
+        </section>
+
+        <section class="info-section">
+          <h3>How Does It Work?</h3>
+          <p>Players plan a route to rescue astronauts whilst managing limited fuel. Through trial and error, they discover that:</p>
+          <ul>
+            <li>The order matters - different routes use different amounts of fuel</li>
+            <li>Shorter paths are more efficient than longer ones</li>
+            <li>Visual planning helps identify better solutions</li>
+          </ul>
+          <p>The game progressively increases difficulty by reducing available fuel, encouraging more careful route planning.</p>
+        </section>
+
+        <section class="info-section">
+          <h3>How Are Stars Awarded?</h3>
+          <p>Stars reflect how close the player's route is to the optimal solution for that level:</p>
+          <ul>
+            <li><strong>⭐⭐⭐⭐⭐ 5 Stars:</strong> Within 10% of the best possible route</li>
+            <li><strong>⭐⭐⭐⭐ 4 Stars:</strong> Within 30% of the best possible route</li>
+            <li><strong>⭐⭐⭐ 3 Stars:</strong> Better than halfway between worst and best</li>
+            <li><strong>⭐⭐ 2 Stars:</strong> Completed but with a poor route</li>
+            <li><strong>⭐ 1 Star:</strong> Barely made it</li>
+          </ul>
+          <p class="info-note">Each level's star ratings are calibrated to its difficulty, so achieving 5 stars is always possible with the optimal route.</p>
+        </section>
+
+        <section class="info-section">
+          <h3>Real-World Applications</h3>
+          <p>Route optimisation is used in:</p>
+          <ul>
+            <li>Delivery and logistics (Royal Mail, Amazon)</li>
+            <li>Circuit board design and manufacturing</li>
+            <li>DNA sequencing and bioinformatics</li>
+            <li>Scheduling and resource allocation</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
