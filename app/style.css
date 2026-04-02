@@ -748,7 +748,7 @@ body::before {
 
   .fuel-gauge-container {
     min-height: 80px;
-    max-height: 120px;
+    max-height: none;
   }
 
   .controls-section {
@@ -833,14 +833,14 @@ body::before {
 /* Mobile portrait - very compact */
 @media (max-width: 480px) and (orientation: portrait) {
   .map-container {
-    height: 65vh;
+    height: 52vh;
     flex: 0 0 auto;
   }
 
   .map-panel {
-    height: 35vh;
-    padding: clamp(8px, 1.5vh, 14px) clamp(12px, 3vw, 18px);
-    gap: clamp(6px, 1.2vh, 12px);
+    height: 48vh;
+    padding: clamp(6px, 1.2vh, 10px) clamp(10px, 2.5vw, 14px);
+    gap: clamp(4px, 0.8vh, 8px);
     overflow: hidden;
     grid-template-rows: auto auto minmax(0, 1fr) auto;
     align-content: start;
@@ -858,21 +858,17 @@ body::before {
   }
 
   .fuel-section {
-    gap: clamp(6px, 1.2vh, 10px);
+    gap: clamp(4px, 0.8vh, 6px);
     min-height: 0;
   }
 
-  .fuel-label {
-    font-size: clamp(0.8rem, 2vh, 0.95rem);
-  }
-
-  .fuel-status {
-    font-size: clamp(0.7rem, 1.8vh, 0.85rem);
+  .fuel-label-row {
+    display: none;
   }
 
   .fuel-gauge-container {
-    min-height: 50px;
-    max-height: 100px;
+    min-height: 40px;
+    max-height: 70px;
   }
 
   .controls-section {
@@ -880,14 +876,18 @@ body::before {
     margin-top: clamp(4px, 1vh, 8px);
   }
 
+  .controls-section {
+    gap: clamp(4px, 0.8vh, 6px);
+  }
+
   .primary-btn {
     font-size: clamp(0.85rem, 2.2vh, 1rem);
-    padding: clamp(9px, 2vh, 13px) clamp(16px, 3.5vw, 20px);
+    padding: clamp(8px, 1.8vh, 11px) clamp(14px, 3.2vw, 18px);
   }
 
   .secondary-btn {
     font-size: clamp(0.75rem, 2vh, 0.9rem);
-    padding: clamp(7px, 1.6vh, 11px) clamp(12px, 3vw, 16px);
+    padding: clamp(6px, 1.4vh, 9px) clamp(10px, 2.8vw, 14px);
   }
 
   .game-title {

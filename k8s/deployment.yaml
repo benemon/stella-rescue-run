@@ -17,7 +17,7 @@ spec:
       containers:
       - name: stella-rescue
         # Replace with your registry URL and tag
-        image: your-registry/stella-rescue:latest
+        image: quay.io/benjamin_holmes/stella-rescue-run:latest
         ports:
         - containerPort: 8080
           protocol: TCP
