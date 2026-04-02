@@ -94,6 +94,6 @@ If fonts fail to load, the game will fall back to system fonts:
 
 The game will still be playable but won't look as polished.
 
-## License
+## Licence
 
-Both Baloo 2 and Nunito are licensed under the SIL Open Font License 1.1, which allows for free use including commercial projects.
+Both Baloo 2 and Nunito are licensed under the SIL Open Font Licence 1.1, which allows for free use including commercial projects.

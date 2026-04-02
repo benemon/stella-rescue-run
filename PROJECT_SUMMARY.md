@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Stella's Rescue Run** is a complete, production-ready browser-based route optimization game for children aged 7–10. The game teaches the Traveling Salesman Problem concept through intuitive gameplay without requiring mathematical knowledge.
+**Stella's Rescue Run** is a complete, production-ready browser-based route optimisation game for children aged 7–10. The game teaches the Traveling Salesman Problem concept through intuitive gameplay without requiring mathematical knowledge.
 
 ## Project Statistics
 
@@ -120,17 +120,16 @@ This ensures every random level is:
 
 ### ⚠️ Fonts
 
-The game requires three self-hosted font files (not included in repo):
+The game requires two self-hosted font files (not included in repo):
 
-- `app/assets/fonts/Baloo2-Bold.woff2`
-- `app/assets/fonts/Nunito-Regular.woff2`
-- `app/assets/fonts/Nunito-Bold.woff2`
+- `app/assets/fonts/baloo-2-v23-latin-regular.woff2` (or similar version)
+- `app/assets/fonts/nunito-v32-latin-regular.woff2` (or similar version)
 
 **Why not included**: Font files are ~100KB each and should be downloaded directly from Google Fonts to ensure licensing compliance.
 
 **How to add**: See [FONTS.md](FONTS.md) for step-by-step instructions.
 
-**Fallback behavior**: Game works without fonts but uses system sans-serif (less polished).
+**Fallback behaviour**: Game works without fonts but uses system sans-serif (less polished).
 
 ### Optional Enhancements
 

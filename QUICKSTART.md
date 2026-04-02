@@ -11,14 +11,14 @@ Get Stella's Rescue Run running in 5 minutes!
 
 ### 1. Download Fonts
 
-The game needs three font files. Download them using google-webfonts-helper:
+The game needs two font files. Download them using google-webfonts-helper:
 
 **Visit**: https://gwfh.mranftl.com/fonts
 
 **Download these fonts** (select "Modern Browsers" / woff2 only):
-- **Baloo 2** → Bold (700) → Save as `app/assets/fonts/Baloo2-Bold.woff2`
-- **Nunito** → Regular (400) → Save as `app/assets/fonts/Nunito-Regular.woff2`
-- **Nunito** → Bold (700) → Save as `app/assets/fonts/Nunito-Bold.woff2`
+
+- **Baloo 2** → Regular (400) → Save as `app/assets/fonts/baloo-2-v23-latin-regular.woff2` (version may vary)
+- **Nunito** → Regular (400) → Save as `app/assets/fonts/nunito-v32-latin-regular.woff2` (version may vary)
 
 See [FONTS.md](FONTS.md) for detailed instructions.
 

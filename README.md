@@ -1,13 +1,13 @@
 # Stella's Rescue Run
 
-A browser-based route optimization game for children aged 7–10. Help Stella the rocket pilot rescue stranded astronauts by plotting efficient routes through space!
+A browser-based route optimisation game for children aged 7–10. Help Stella the rocket pilot rescue stranded astronauts by plotting efficient routes through space!
 
 ## Features
 
-- **Educational gameplay**: Teaches route optimization through intuitive play
+- **Educational gameplay**: Teaches route optimisation through intuitive play
 - **Offline-first**: Fully playable offline after first load via Service Worker
 - **No dependencies**: Pure vanilla JavaScript, no frameworks or build tools
-- **Containerized**: Ready for deployment to OpenShift with unprivileged nginx
+- **Containerised**: Ready for deployment to OpenShift with unprivileged nginx
 
 ## Stack
 
@@ -160,7 +160,7 @@ Open http://localhost:8080
 
 The rocket is a bespoke SVG matching the *Wallace and Gromit: A Grand Day Out* aesthetic:
 - Bulbous egg-shaped body (not cylindrical)
-- Bright orange-red color throughout
+- Bright orange-red colour throughout
 - Geodesic panel seams with dome-headed rivets
 - Oval submarine-style porthole with cross handle
 - Stubby rounded fins
@@ -218,10 +218,10 @@ Requires:
 - Service Worker API
 - `requestAnimationFrame`
 
-## License
+## Licence
 
 Assets: CC0 (Kenney.nl space assets)
-Code: [Your License]
+Code: [Your Licence]
 
 ## Credits
 
