@@ -833,32 +833,32 @@ body::before {
 /* Mobile portrait - very compact */
 @media (max-width: 480px) and (orientation: portrait) {
   .map-container {
-    height: 52vh;
+    height: 48vh;
     flex: 0 0 auto;
   }
 
   .map-panel {
-    height: 48vh;
-    padding: clamp(6px, 1.2vh, 10px) clamp(10px, 2.5vw, 14px);
-    gap: clamp(4px, 0.8vh, 8px);
+    height: 52vh;
+    padding: clamp(5px, 1vh, 8px) clamp(8px, 2vw, 12px);
+    gap: clamp(3px, 0.6vh, 6px);
     overflow: hidden;
     grid-template-rows: auto auto minmax(0, 1fr) auto;
     align-content: start;
   }
 
   .panel-title {
-    font-size: clamp(1rem, 2.8vh, 1.2rem);
-    margin-bottom: clamp(-4px, -0.5vh, 0px);
+    font-size: clamp(0.95rem, 2.5vh, 1.1rem);
+    margin-bottom: clamp(-5px, -0.6vh, -2px);
   }
 
   .level-indicator-small {
-    font-size: clamp(0.75rem, 2vh, 0.9rem);
-    padding: clamp(3px, 0.8vh, 6px) clamp(8px, 2vw, 12px);
-    margin-bottom: clamp(4px, 1vh, 8px);
+    font-size: clamp(0.7rem, 1.8vh, 0.85rem);
+    padding: clamp(2px, 0.6vh, 4px) clamp(6px, 1.8vw, 10px);
+    margin-bottom: 0;
   }
 
   .fuel-section {
-    gap: clamp(4px, 0.8vh, 6px);
+    gap: clamp(3px, 0.6vh, 5px);
     min-height: 0;
   }
 
@@ -867,27 +867,22 @@ body::before {
   }
 
   .fuel-gauge-container {
-    min-height: 40px;
-    max-height: 70px;
+    min-height: 35px;
+    max-height: 50px;
   }
 
   .controls-section {
-    gap: clamp(4px, 1vh, 8px);
-    margin-top: clamp(4px, 1vh, 8px);
-  }
-
-  .controls-section {
-    gap: clamp(4px, 0.8vh, 6px);
+    gap: clamp(3px, 0.6vh, 5px);
   }
 
   .primary-btn {
-    font-size: clamp(0.85rem, 2.2vh, 1rem);
-    padding: clamp(8px, 1.8vh, 11px) clamp(14px, 3.2vw, 18px);
+    font-size: clamp(0.8rem, 2vh, 0.95rem);
+    padding: clamp(7px, 1.5vh, 10px) clamp(12px, 3vw, 16px);
   }
 
   .secondary-btn {
-    font-size: clamp(0.75rem, 2vh, 0.9rem);
-    padding: clamp(6px, 1.4vh, 9px) clamp(10px, 2.8vw, 14px);
+    font-size: clamp(0.7rem, 1.8vh, 0.85rem);
+    padding: clamp(5px, 1.2vh, 8px) clamp(8px, 2.5vw, 12px);
   }
 
   .game-title {
